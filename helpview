@@ -1,0 +1,15 @@
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from .models import HelpDetail
+from .serializers import HelpDetailSerializer
+
+class HelpListView(ListAPIView):
+    queryset = HelpDetail.objects.all()
+    serializer_class = HelpDetailSerializer
+
+class HelpDetailView(RetrieveAPIView):
+    queryset = HelpDetail.objects.all()
+    serializer_class = HelpDetailSerializer
+
+class HelpCreateView(CreateAPIView):
+    queryset = HelpDetail.objects.all()
+    serializer_class = HelpDetailSerializer
