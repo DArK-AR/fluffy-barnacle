@@ -1,0 +1,11 @@
+from django.db import models
+
+class HelpDetail(models.Model):
+    name = models.CharField(max_length=255)              # Person's name
+    number = models.CharField(max_length=20)             # Phone number or ID
+    note = models.TextField(blank=True, null=True)       # Extra notes
+    issue = models.TextField(blank=True, null=True)                           # Description of the issue
+    created_at = models.DateTimeField(auto_now_add=True) # Timestamp
+
+    def __str__(self):
+        return f"{self.name} - {self.issue[:30]}"
