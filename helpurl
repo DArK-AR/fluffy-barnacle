@@ -1,0 +1,8 @@
+from django.urls import path
+from .views import HelpListView, HelpDetailView, HelpCreateView
+
+urlpatterns = [
+    path("multiple/", HelpListView.as_view(), name="help-list"),
+    path("single/<int:pk>/", HelpDetailView.as_view(), name="help-detail"),
+    path("create/", HelpCreateView.as_view(), name="help-create"),
+]
