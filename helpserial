@@ -1,0 +1,7 @@
+from rest_framework import serializers
+from .models import HelpDetail
+
+class HelpDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HelpDetail
+        fields = ["id", "name", "number", "note", "issue", "created_at"]
